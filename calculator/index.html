@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>simple calculator · look</title>
+  <link rel="stylesheet" href="styles.css">i
+  <!-- simple, clean, calculator style – no icons, no extra fluff -->
+</head>
+<body>
+  <!-- main calculator app – straightforward semantic structure -->
+  <div class="calculator" role="main" aria-label="simple calculator">
+    
+    <!-- DISPLAY: shows previous & current operand -->
+    <div class="display" aria-live="polite" aria-atomic="true">
+      <div class="previous-operand" id="previous-operand"></div>
+      <div class="current-operand" id="current-operand">0</div>
+    </div>
+
+    <!-- BUTTON GRID – all buttons, no external dependency, pure html/css layout -->
+    <div class="button-grid">
+      
+      <!-- top row: clear (AC) and delete (⌫)  -->
+      <button class="btn clear span-two" data-action="clear">AC</button>
+      <button class="btn delete" data-action="delete">⌫</button>
+      <button class="btn operator" data-value="÷">÷</button>
+      
+      <!-- second row -->
+      <button class="btn" data-value="7">7</button>
+      <button class="btn" data-value="8">8</button>
+      <button class="btn" data-value="9">9</button>
+      <button class="btn operator" data-value="×">×</button>
+      
+      <!-- third row -->
+      <button class="btn" data-value="4">4</button>
+      <button class="btn" data-value="5">5</button>
+      <button class="btn" data-value="6">6</button>
+      <button class="btn operator" data-value="-">−</button>
+      
+      <!-- fourth row -->
+      <button class="btn" data-value="1">1</button>
+      <button class="btn" data-value="2">2</button>
+      <button class="btn" data-value="3">3</button>
+      <button class="btn operator" data-value="+">+</button>
+      
+      <!-- last row: zero (span two) + decimal + equals -->
+      <button class="btn zero" data-value="0">0</button>
+      <button class="btn" data-value=".">.</button>
+      <button class="btn equals" data-action="equals">=</button>
+    </div>
+    <!-- simple label for screen readers, no visual clutter -->
+    <span class="visually-hidden">press buttons to calculate</span>
+  </div>
+
+  <!-- 
+    ———— extremely minimal JavaScript ———— 
+    only basic calculator logic, no extra libraries.
+    keeps the "simple looking" app fully functional.
+  -->
+    <script src="script.js"></script>
+</body>
+</html>
