@@ -12,11 +12,18 @@ if (isNaN(temp)) {
 if (unit === 'C'){
     // celcius to fahrenheit
     const fahrenheit = (temp * 9/5) + 32;
-    console.log(`${temp}°C is ${fahrenheit.toFixed(2)}°F`);
+    const kelvin = temp + 273.15;
+    console.log(`${temp}°C is ${fahrenheit.toFixed(2)}°F or ${kelvin.toFixed(2)}°K`);
 }else if (unit === 'F'){
     // celcius to fahrenheit
     const celcius = (temp - 32) * 5/9;
-    console.log(`${temp}°F is ${celcius.toFixed(2)}°C`);
+    const kelvin = celcius + 273.15;
+    console.log(`${temp}°F is ${celcius.toFixed(2)}°C or ${kelvin.toFixed(2)}°K`);
+}else if (unit === 'K'){
+    // celcius to fahrenheit
+    const celcius = temp - 273.15;
+    const fahrenheit = celcius * 9/5 + 32;
+    console.log(`${temp}°K is ${celcius.toFixed(2)}°C or ${fahrenheit.toFixed(2)}°F`);
 }else{
     console.log("Please specify 'C' for celcius or 'F' for fahrenheit.");
 }
