@@ -35,8 +35,9 @@
 // }
 // console.log(reversal('noon'));
 
-function anagr(str1){
-    return str1.split('').sort().join('');
-}
+// function anagr(str1){
+//     return str1.split('').sort().join('');
+// }
 
-console.log(anagr("kimaniwakimani"));
+// console.log(anagr("kimaniwakimani"));
+
