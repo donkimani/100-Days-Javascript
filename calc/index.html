@@ -11,34 +11,35 @@
 
 <div class="calculator">
     <h1>Kimani Calculator</h1>
-    <div class="display">0</div>
+    <div class="display" id="display">0</div>
 
     <div class="buttons">
-        <button class="btn-clear">AC</button>
-        <button class="btn-clear">+/-</button>
-        <button class="btn-clear">%</button>
-        <button class="btn-operator">÷</button>
+        <button class="btn-clear" onclick="clearDisplay()">AC</button>
+        <button class="btn-clear" onclick="toggleSign()">+/-</button>
+        <button class="btn-clear" onclick="percentage()">%</button>
+        <button class="btn-operator" onclick="appendOperation('/')">÷</button>
 
-        <button class="btn-number">7</button>
-        <button class="btn-number">8</button>
-        <button class="btn-number">9</button>
-        <button class="btn-operator">×</button>
+        <button class="btn-number" onclick="appendNumber('7')">7</button>
+        <button class="btn-number" onclick="appendNumber('8')">8</button>
+        <button class="btn-number" onclick="appendNumber('9')">9</button>
+        <button class="btn-operator" onclick="appendOperation('*')">×</button>
 
-        <button class="btn-number">4</button>
-        <button class="btn-number">5</button>
-        <button class="btn-number">6</button>
-        <button class="btn-operator">−</button>
+        <button class="btn-number" onclick="appendNumber('4')">4</button>
+        <button class="btn-number" onclick="appendNumber('5')">5</button>
+        <button class="btn-number" onclick="appendNumber('6')">6</button>
+        <button class="btn-operator" onclick="appendOperation('-')">−</button>
 
-        <button class="btn-number">1</button>
-        <button class="btn-number">2</button>
-        <button class="btn-number">3</button>
-        <button class="btn-operator">+</button>
+        <button class="btn-number" onclick="appendNumber('1')">1</button>
+        <button class="btn-number" onclick="appendNumber('2')">2</button>
+        <button class="btn-number" onclick="appendNumber('3')">3</button>
+        <button class="btn-operator" onclick="appendOperation('+')">+</button>
 
-        <button class="btn-number" style="grid-column: span 2;">0</button>
-        <button class="btn-number">.</button>
-        <button class="btn-equal">=</button>
+        <button class="btn-number" style="grid-column: span 2;" onclick="appendNumber('0')">0</button>
+        <button class="btn-number" onclick="appendNumber('.')">.</button>
+        <button class="btn-equal" onclick="calculate()">=</button>
     </div>
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
