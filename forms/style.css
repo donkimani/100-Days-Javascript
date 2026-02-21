@@ -1,4 +1,13 @@
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+
 form {
+  display:grid;
 }
 
 .form-group {
