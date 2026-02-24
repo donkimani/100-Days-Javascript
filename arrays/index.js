@@ -54,5 +54,38 @@ function flattenArray(data, initialValue = []){
 }
 // console.log(flattenArray(arr2))
 
+// functional programming
+// closure functions
+function bash(){
+    age = 0;
+    function ongezamiaka(){
+        return age++;
+    }
+    function wish(){
+        console.log(`Kid is ${age}. Happy Birthday`);
+    }
+    return {ongezamiaka, wish};
+}
+// const kido = bash();
+// kido.ongezamiaka()
+// kido.wish()
+// kido.ongezamiaka()
+// kido.wish()
+// kido.ongezamiaka()
+// kido.wish()
 
-// compose functions
+
+function makePerson(name){
+    let _name = name;
+
+    const setName = (newName) => (_name=newName);
+    const getName = () => _name;
+
+    return {setName, getName};
+}
+const me = makePerson("kim");
+console.log(me.getName());
+console.log(me.setName("roy"));
+// console.log(me.getName());
+
+
