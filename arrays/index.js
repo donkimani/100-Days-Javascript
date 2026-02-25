@@ -1,6 +1,7 @@
 //  Implement map, filter, reduce from scratch (understand the mechanics)
 // map
 const arr = [1,2,3,4,5,6,7];
+const arr3 = ["john doe", "carley mackinon", "jack bram"];
 const arrmap = (x) => {
     newarr = [];
     for (let y=0; y<arr.length; y++){
@@ -15,6 +16,12 @@ const arrmap = (x) => {
 for (let x=0; x<arr.length; x++){
     // console.log(`each number is: ${arr[x]}`);
 }
+
+
+// fliter
+const filt = arr3.filter((nme) => nme.includes("john"));
+// console.log(`filtered names: ${filt}`);
+
 
 // Reduce
 // console.log("running reduce manually");
@@ -83,9 +90,41 @@ function makePerson(name){
 
     return {setName, getName};
 }
-const me = makePerson("kim");
-console.log(me.getName());
-console.log(me.setName("roy"));
+// const me = makePerson("kim");
+// console.log(me.getName());
+// console.log(me.setName("roy"));
 // console.log(me.getName());
 
 
+// curry functions
+const addCustomer = fn => (...args) => {
+    console.log(`saving customer info....`);
+    return fn(...args);
+}
+
+const processOrder = fn => (...args) => {
+    console.log(`processing order #${[args[0]]}`);
+    return fn(...args);
+}
+
+let completeOrder = (...args) => {
+    console.log(`Order #${[...args].toString()} completed`);
+}
+
+// completeOrder = (processOrder(completeOrder))
+// completeOrder = (addCustomer(completeOrder))
+// completeOrder(1000);
+
+
+const curry = (fn) => {
+    return curried = (...args) => {
+        if (fn.length !== args.length){
+            return curried.bind(null, ...args);
+        }
+        return fn(...args);
+    };
+}
+
+const total = (x, y, z) => x + y + z;
+const curriedTotal = curry(total);
+console.log(curriedTotal(10)(20)(30))
