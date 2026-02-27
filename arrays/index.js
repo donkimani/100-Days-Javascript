@@ -125,6 +125,11 @@ const curry = (fn) => {
     };
 }
 
-const total = (x, y, z) => x + y + z;
-const curriedTotal = curry(total);
-console.log(curriedTotal(10)(20)(30))
+// const total = (x, y, z) => x + y + z;
+// const curriedTotal = curry(total);
+// console.log(curriedTotal(10)(20)(30))
+
+
+// compose and pipe functions 
+const compose = (...fns) => val => fns.reduceRight((prev, fn) => fn(prev), val);
+const compResult = compose()
