@@ -1,3 +1,41 @@
+// ways to create objects
+// constructor function
+function Person(name, age){
+    this.name = name;
+    this.age = age;
+}
+// let user = new Person('jane', '56');
+// console.log(user);
+// console.log(Person);
+
+// object.create()
+const Person2 = Object.create({
+    fname: 'jane',
+    age:23
+})
+// console.log(Person2.age);
+
+const person1 = {
+    city: 'london',
+    calculateAge: function(){
+        const currentYear = new Date().getFullYear();
+        const age = currentYear - this.yearOfBirth;
+        console.log(age);
+    }
+}
+const jane = Object.create(person1);
+jane.name = 'Jane';
+jane.yearOfBirth = '1999';
+jane.calculateAge()
+
+
+// factory function(functions that return objects)
+function createPerson(name,age){
+    return {name, age}
+}
+// console.log(createPerson('jane','30'))
+
+
 // Implement your own class inheritance system
 class Vehicle {
     constructor(name, model){
@@ -33,7 +71,15 @@ class Car extends Vehicle {
     }
 }
 
-const car1 = new Car('subaru', 'forester', 'black');
-car1.color2()
-car1.topSpeed = '186km/hr'
-console.log(car1.topSpeed);
+// const car1 = new Car('subaru', 'forester', 'black');
+// car1.color2()
+// car1.topSpeed = '186km/hr'
+// console.log(car1.topSpeed);
+
+// Object methods: Object.keys(), Object.values(), Object.entries()
+
+// object.entries()
+const obj1 = {
+    fname: 'roy',
+    sname: 'king'
+}
