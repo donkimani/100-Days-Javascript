@@ -20,13 +20,13 @@ const person1 = {
     calculateAge: function(){
         const currentYear = new Date().getFullYear();
         const age = currentYear - this.yearOfBirth;
-        console.log(age);
+        console.log(`${this.name} is ${age} years old`);
     }
 }
-const jane = Object.create(person1);
-jane.name = 'Jane';
-jane.yearOfBirth = '1999';
-jane.calculateAge()
+// const jane = Object.create(person1);
+// jane.name = 'Jane';
+// jane.yearOfBirth = '1999';
+// jane.calculateAge()
 
 
 // factory function(functions that return objects)
@@ -35,6 +35,42 @@ function createPerson(name,age){
 }
 // console.log(createPerson('jane','30'))
 
+const rand = Math.random();
+const animal = {};
+animal["birds of the sky"] = 'nyonde';
+animal.type = 'bird';
+animal.speed = '100km/hr';
+animal[rand] = 'weight'
+// console.log(animal);
+// for(let key in animal){
+//     console.log(key)
+// }
+// console.log(Object.keys(animal));
+
+
+function showProps(obj, objName) {
+  let result = "";
+  Object.keys(obj).forEach((i) => {
+    result += `${objName}.${i} = ${obj[i]}\n`;
+  });
+  console.log(result);
+}
+// showProps(animal,'animal')
+
+// Object methods: Object.keys(), Object.values(), Object.entries()
+
+// Destructuring
+const obj = {ky1: 1, ky2: 2, ky3: 3};
+const {ky1: x, ky2: y, ky3: z} = obj;
+// console.log(x)
+
+const personx = {
+    name: "Kim",
+    address: {city: "new york",
+    country: "kenya"}
+}
+const {name, address: {city, country}} = personx;
+console.log(city);
 
 // Implement your own class inheritance system
 class Vehicle {
