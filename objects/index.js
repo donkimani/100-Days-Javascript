@@ -67,10 +67,41 @@ const {ky1: x, ky2: y, ky3: z} = obj;
 const personx = {
     name: "Kim",
     address: {city: "new york",
-    country: "kenya"}
+        country: "kenya"}
 }
 const {name, address: {city, country}} = personx;
-console.log(city);
+// console.log(city);
+
+// spread operators
+const arr1 = [1,2,3]
+// console.log(...arr1)
+
+function sum(x,y,z,k,l){
+    return x+y+z+k+l;
+}
+const numbers = [1,2,3];
+// console.log(sum(...numbers,6,...[3]))
+
+const datefield = [1970,0,1];
+// console.log(new Date(...datefield))
+const parts = ["shoulders", "knees"];
+const lyrics = ["head", ...parts, "and", "toes"];
+// console.log(lyrics)
+
+// rest operator
+function product(...nums){
+    return nums.reduce((acc,num) => acc*num)
+}
+// console.log(product(12,3,2))
+
+// Define a function with three parameters:
+function myBio(firstName, lastName, company) { 
+  return `${firstName} ${lastName} runs ${company}`;
+}
+
+// Use spread to expand an array’s items into individual arguments:
+console.log(myBio("Oluwatobi", "Sofela", "CodeSweetly"));
+
 
 // Implement your own class inheritance system
 class Vehicle {
