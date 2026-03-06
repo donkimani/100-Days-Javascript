@@ -100,7 +100,47 @@ function myBio(firstName, lastName, company) {
 }
 
 // Use spread to expand an array’s items into individual arguments:
-console.log(myBio("Oluwatobi", "Sofela", "CodeSweetly"));
+// console.log(myBio("Oluwatobi", "Sofela", "CodeSweetly"));
+
+
+// this keyword(bindinfg,call,apply)
+// explicit binding
+function greet(l1,l2,l3){
+    console.log(
+        `Hello my name is ${this.name} and I know ${l1}, ${l2}, ${l3}`
+    )
+}
+const user = {
+    name: 'tyler',
+    age:27,
+}
+const languages = ['js','py', 'c++'];
+// greet.call(user, ...languages);
+
+// .apply helps with the spreading
+// greet.apply(user, languages);
+
+// .bind creates a whole new other funtion
+const newGreet = greet.bind(user, ...languages);
+// newGreet()
+
+// New Binding 
+function User(name,age){
+    this.name = name;
+    this.age = age;
+}
+User.prototype.sayHello = function (){
+    console.log(`My name is ${this.name}`);
+}
+const me = new User('Tyler', 27)
+me.sayHello = function (){
+    console.log(`My name is ${this.name} and I'm ${this.age} yrs old`);
+};
+me.sayHello();
+console.log(me.name)
+console.log(me.__proto__ === User.prototype)
+const you = new User("Grace");
+you.sayHello();
 
 
 // Implement your own class inheritance system
