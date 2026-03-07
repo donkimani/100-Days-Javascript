@@ -136,11 +136,41 @@ const me = new User('Tyler', 27)
 me.sayHello = function (){
     console.log(`My name is ${this.name} and I'm ${this.age} yrs old`);
 };
-me.sayHello();
-console.log(me.name)
-console.log(me.__proto__ === User.prototype)
-const you = new User("Grace");
-you.sayHello();
+// me.sayHello();
+// console.log(me.name)
+// console.log(me.__proto__ === User.prototype)
+// const you = new User("Grace");
+// you.sayHello();
+
+
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+  getDetails() {
+    return `${this.title} by ${this.author}`;
+  }
+}
+
+class Library {
+  constructor() {
+    this.books = [];
+  }
+  addBook(book) {
+    this.books.push(book);
+  }
+  listBooks() {
+    return this.books.map(book => book.getDetails()).join('\n');
+  }
+}
+
+const library = new Library();
+const book1 = new Book('1984', 'George Orwell');
+const book2 = new Book('To Kill a Mockingbird', 'Harper Lee');
+library.addBook(book1);
+library.addBook(book2);
+console.log(library.listBooks());
 
 
 // Implement your own class inheritance system
