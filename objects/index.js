@@ -170,7 +170,7 @@ const book1 = new Book('1984', 'George Orwell');
 const book2 = new Book('To Kill a Mockingbird', 'Harper Lee');
 library.addBook(book1);
 library.addBook(book2);
-console.log(library.listBooks());
+// console.log(library.listBooks());
 
 
 // Implement your own class inheritance system
@@ -220,3 +220,12 @@ const obj1 = {
     fname: 'roy',
     sname: 'king'
 }
+
+// console.log(Object.entries(obj1))
+
+obj1['fname'] = 'Kimani';
+// console.log(obj1['fname'])
+
+// Data structures
+
+
