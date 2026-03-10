@@ -78,12 +78,66 @@ class Stack2{
 
 const stack12 = new Stack2();
 
-console.log(stack12.push(9));
-console.log(stack12.push(8));
-console.log(stack12.push(7));
-console.log(stack12.push(6));
+// console.log(stack12.push(9));
+// console.log(stack12.push(8));
+// console.log(stack12.push(7));
+// console.log(stack12.push(6));
 
-console.log(stack12.pop());
-console.log(stack12.pop());
 // console.log(stack12.pop());
+// console.log(stack12.pop());
+// console.log(stack12.pop());
+
+// queues
+
+// create a class for each node in the queue
+class Node123 {
+    constructor(value){
+        this.value = value;
+        this.next = null;
+    }
+}
+
+// creating a class for the queue
+class Queue{
+    constructor(){
+        this.first = null;
+        this.last = null;
+        this.size = 0;
+    }
+
+    enqueue(val){
+        let newNode = new Node123(val);
+        if (!this.first){
+            this.first = newNode;
+            this.last = newNode;
+        }else{
+            this.last.next = newNode;
+            this.last = newNode;
+        }
+        ++this.size
+        return `${this.last.value} has been added,now que is size: ${this.size}`;
+    }
+
+    dequeue(){
+        if(!this.first) return null;
+
+        var temp = this.first;
+        if(this.first === this.last){
+            this.last = null;
+        }
+        this.first = this.first.next
+        this.size--;
+        return `${temp.value} has been removed`;
+    }
+}
+
+const queue1 = new Queue();
+console.log(queue1.enqueue("lamba lolo1"));
+console.log(queue1.enqueue("lamba lolo2"));
+console.log(queue1.enqueue("lamba lolo3"));
+
+console.log(queue1.dequeue());
+console.log(queue1.dequeue());
+console.log(queue1.dequeue());
+
 

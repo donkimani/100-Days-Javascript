@@ -227,5 +227,76 @@ obj1['fname'] = 'Kimani';
 // console.log(obj1['fname'])
 
 // Data structures
+// stacks
+// simple task manager to add and remove tasks
+class Task{
+    constructor(){
+        this.count = 0
+        this.tasks = [];
+    }
+
+    add(name){
+        if (!name) return "you didn't pass a task to add"
+        this.tasks[this.count] = name;
+        this.count ++;
+        return `"${name}" has been added to your tasks`;
+    }
+
+    remove(){
+        if (this.count <= 0){return "No tasks available to remove"};
+        const xyz = `${this.tasks[this.count - 1]} has been removed from tasks`;
+        this.tasks.length = this.tasks.length - 1;
+        this.count --;
+        return xyz;
+
+    }
+
+    displayTasks(){
+        return this.tasks;
+    }
+
+    displayLenght(){
+        return this.count;
+    }
+}
+
+const task = new Task();
+// console.log(task.add())
+// console.log(task.add("watch avengers"));
+// console.log(task.add("code for 30 minutes"));
+// console.log(task.add("make a github commit"));
+
+// console.log(task.displayTasks());
+// console.log(task.count);
+
+// console.log(task.remove());
+// console.log(task.remove());
+// console.log(task.remove());
+// console.log(task.remove());
+// console.log(task.remove());
+
+// console.log(task.displayTasks());
+// console.log(task.displayLenght());
 
 
+
+// console.log(task.count);
+
+// que
+
+class Task2{
+    constructor(){
+        this.count = 0
+        this.tasks = [];
+    }
+
+    add(name){
+    }
+
+    remove(){
+
+    }
+}
+
+const arr12 = [1,2,3,4];
+console.log(arr12)
