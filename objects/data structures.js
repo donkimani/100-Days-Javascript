@@ -132,12 +132,51 @@ class Queue{
 }
 
 const queue1 = new Queue();
-console.log(queue1.enqueue("lamba lolo1"));
-console.log(queue1.enqueue("lamba lolo2"));
-console.log(queue1.enqueue("lamba lolo3"));
+// console.log(queue1.enqueue("lamba lolo1"));
+// console.log(queue1.enqueue("lamba lolo2"));
+// console.log(queue1.enqueue("lamba lolo3"));
 
-console.log(queue1.dequeue());
-console.log(queue1.dequeue());
-console.log(queue1.dequeue());
+// console.log(queue1.dequeue());
+// console.log(queue1.dequeue());
+// console.log(queue1.dequeue());
 
+// linked lists
+class Node3{
+    constructor(value){
+        this.value = value;
+        this.next = null;
+    }
+}
+
+class SinglyLinked{
+    constructor(){
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+
+    push(val){
+        const newNode = new Node3(val);
+        if(!this.head){
+            this.head = newNode;
+            this.tail = this.head;
+        }
+        else{
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        this.length ++;
+        return this
+    }
+
+    pop(){
+        if(!this.head) return undefined;
+        const current = this.head;
+        const newTail = current;
+        while(current.next){
+            newTail = current;
+            current = current.next;
+        }
+    }
+}
 
