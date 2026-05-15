@@ -299,4 +299,37 @@ class Task2{
 }
 
 const arr12 = [1,2,3,4];
-console.log(arr12)
+// console.log(arr12)
+
+const anim = {
+    types: {
+        bird: "dove",
+        mammal: "cow",
+        reptile: "crocodile",
+        amphibians: "frog",
+        insects: "grasshoppers",
+    }
+}
+// console.log(anim.types.bird)
+
+
+function gret(){
+    console.log(`hello ${this.name}!`);
+}
+const pers2 = {
+    name: 'jane',
+    greet: function(){
+        gret.call(this);
+    }
+}
+// pers2.greet()
+
+const person = {
+    name: "Dev",
+    sayHi: function() {
+        setTimeout(function() {
+            console.log(`Hi, ${this.name}`);
+        }.bind(this), 1000);
+    }
+};
+person.sayHi();
