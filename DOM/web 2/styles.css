@@ -1,0 +1,16 @@
+div {
+    border-radius: 1px;
+    margin: auto;
+    padding: 30px;
+}
+
+.one {
+    background-color: navy;
+}
+.two {
+    background-color: antiquewhite;
+}
+
+.three {
+    background-color: brown;
+}

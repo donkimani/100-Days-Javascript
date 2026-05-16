@@ -6,7 +6,6 @@
 const story = document.body.querySelector(".story");
 
 const setText = document.body.querySelector("#set-text");
-
 setText.addEventListener("click", () => {
     story.textContent = "RUTO MUST GOOOOO!!!"
 });
@@ -34,4 +33,12 @@ const removeChild = document.body.querySelector("#remove-child");
 removeChild.addEventListener("click", () => {
     const child = document.body.querySelector(".child");
     parent.removeChild(child);
+})
+
+// modifying header and paragraph
+document.querySelector("input").addEventListener("click", () => {
+    // document.getElementsByTagName("h2")
+    // elements in the document, and the first number is 0
+    const header = document.getElementsByTagName("h2").item(0);
+    header.firstChild.data = "Kimani Roy";
 })
