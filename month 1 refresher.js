@@ -42,3 +42,66 @@ fruits.splice(1, 0, 'mango', 'melon');
 let arr12 = [3, 1, 10, 2];
 arr12.sort((a,b) => a-b);
 console.log(arr12)
+
+// Array Matrix
+const matrix = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+];
+// console.log(matrix[2][2]);
+// looping in the matrix
+for(let row of matrix){
+    for(let cell of row){
+        // console.log(cell);
+    }
+}
+// map mthod on the array
+const doubmatrix = matrix.map(row => row.map(cell => cell*2));
+// console.log(doubmatrix);
+
+// Objects
+const protoPerson = {
+    greet(){
+        return `Hi, I'm ${this.name}!`
+    }
+};
+const don = Object.create(protoPerson)
+don.name = 'don';
+// console.log(don.greet());
+
+const obj = {name: 'ada'};
+Object.defineProperty(obj, 'secret', {
+    value: 'hidden',
+    enumerable: false,
+    writable: false,
+    configurable: false
+});
+// console.log(Object.getOwnPropertyNames(obj));
+for (let key in obj){
+    // console.log(key)
+}
+// console.log(Object.keys(obj))
+
+let x = 1, y = 2;
+[x,y] = [y,x]
+// console.log(x,y)
+
+const person = {
+  name: 'Ada',
+  job: {
+    title: 'Mathematician',
+    year: 1843
+  }
+};
+
+const { name, job, job: { title, year } } = person;
+// console.log(name, job, title, year);
+
+const response = {
+  status: 200,
+  data: ['Ada', 'Charles', 'Alan']
+};
+
+const {status, data:[first, , last]} = response
+console.log(status, first, last);
