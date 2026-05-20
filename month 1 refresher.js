@@ -104,4 +104,78 @@ const response = {
 };
 
 const {status, data:[first, , last]} = response
-console.log(status, first, last);
+// console.log(status, first, last);
+
+const user = {
+  name: 'Ada',
+  greet() {
+    console.log(`Hello, I'm ${this.name}`);
+  }
+};
+
+// user.greet();
+
+function introduce(){
+    console.log(`I am ${this.name} from ${this.city}`);
+}
+const pers1 = {name: 'roy', city: 'nairobi'};
+introduce.call(pers1);
+const persfunc = introduce.bind(pers1);
+persfunc();
+
+// new binding
+function Pers2(name){
+    this.name = name;
+}
+const p = new Pers2("King");
+// console.log(p.name);
+
+// call
+function total(pref, amount){
+    console.log(`${pref}: ${this.tax + amount}`);
+}
+const service = {tax: 5};
+total.call(service, 'Total', 100);
+
+// apply
+total.apply(service, ['Grand Total', 200]);
+
+// bind
+const serviceTotal = total.bind(service, 'Invoice')
+serviceTotal(300);
+
+const counter = {
+    count: 0,
+    increament(){
+        this.count++;
+        console.log(`${this.count}`)
+    }
+}
+// setTimeout(counter.increament.bind(counter),1000)
+// countfunc()
+
+const arrowFunc = function(){console.log(this)};
+// arrowFunc.call({custom: 'obj'});
+
+const team = {
+    name: 'Developer',
+    members: ['Ada', 'Charles'],
+
+    printGood(){
+        this.members.forEach(member => {
+            console.log(`${this.name}: ${member}`);
+        });
+    }
+};
+
+// team.printGood()
+
+const numbers1 = {
+  data: [1, 2, 3],
+  sum() {
+    return this.data.reduce((a, b) => a + b);
+  }
+};
+
+const otherObj = { data: [10, 20, 30] };
+console.log(numbers1.sum.call(otherObj)); // 60
